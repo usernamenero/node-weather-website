@@ -5,6 +5,8 @@ const geocode = require('./utils/geocode.js')
 const weatherstack = require('./utils/weatherstack.js')
 
 const app = express()
+// listen to heroku port
+const port = process.env.PORT || 3000
 
 
 //// Define paths for express config
@@ -111,6 +113,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port 3000' + port)
 })
